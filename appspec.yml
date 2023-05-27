@@ -2,24 +2,18 @@ version: 0.0
 os: linux
 files:
   - source:  /  # S3 버킷의 경로
-#    destination: /home/ubuntu/action
-    destination: /home/ssm-user/action
+    destination: /home/ubuntu/action
     overwrite: yes
 
 # 배포된 파일에 대한 권한 설정
-#permissions:
-#  - object: /       # 권한을 적용할 파일이나 디렉토리. 여기서는 `/` 디렉토리
-#    pattern: "**"   # 파일이나 디렉토리 경로의 패턴: 여기서는 모든 하위 디렉토리와 파일을 의미
-#    owner: ubuntu
-#    group: ubuntu
 permissions:
-  - object: /home/ssm-user     # 권한을 적용할 파일이나 디렉토리. 여기서는 `/` 디렉토리
+  - object: /       # 권한을 적용할 파일이나 디렉토리. 여기서는 `/` 디렉토리
     pattern: "**"   # 파일이나 디렉토리 경로의 패턴: 여기서는 모든 하위 디렉토리와 파일을 의미
-    owner: ssm-user
-    group: ssm-user
+    owner: ubuntu
+    group: ubuntu
 
 hooks:
   ApplicationStart:
     - location: scripts/deploy.sh
       timeout: 60
-      runas: ssm-user
+      runas: ubuntu
