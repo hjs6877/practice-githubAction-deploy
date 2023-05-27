@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source:  /  # S3 버킷의 경로
-    destination: /home/ubuntu/action
+    destination: /home/ubuntu/action # TODO destination이 ubuntu일 필요가 없다. ssm-user 계정으로로 가능함.
     overwrite: yes
 
 # 배포된 파일에 대한 권한 설정

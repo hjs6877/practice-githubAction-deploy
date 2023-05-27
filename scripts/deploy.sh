@@ -1,4 +1,5 @@
 #!/bin/bash
+# TODO: ubuntu 계정을 ssm-user 계정 경로로 바꿔서 해도 된다. 그게 학습의 일관성이 있음.
 # 빌드 파일의 이름이 콘텐츠와 다르다면 다음 줄의 .jar 파일 이름을 수정하시기 바랍니다.
 BUILD_JAR=$(ls /home/ubuntu/action/build/libs/practice-githubAction-deploy-0.0.1-SNAPSHOT.jar)
 JAR_NAME=$(basename $BUILD_JAR)
