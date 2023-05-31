@@ -17,7 +17,7 @@ permissions:
   contents: read
 
 env:
-  S3_BUCKET_NAME: be-0-jungsik
+  S3_BUCKET_NAME: be-01-jungsik
 
 jobs:
   build:
@@ -60,7 +60,7 @@ jobs:
     # CodeDeploy에게 배포 명령을 내립니다.
     - name: Code Deploy
       run: >
-         aws deploy create-deployment --application-name be-0-jungsik
+         aws deploy create-deployment --application-name be-01-jungsik
          --deployment-config-name CodeDeployDefault.AllAtOnce
-         --deployment-group-name be-0-jungsik-group
+         --deployment-group-name be-01-jungsik-group
          --s3-location bucket=$S3_BUCKET_NAME,bundleType=zip,key=practice-deploy.zip
