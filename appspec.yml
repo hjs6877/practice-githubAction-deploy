@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source:  /  # S3 버킷의 경로. 아티팩트 기준에서 최상위 경로. S3 버킷에 저장된 압축 파일이 아티팩트(산출물)가 된다.
-    destination: /home/ubuntu/action # TODO destination이 반드시 ubuntu일 필요는 없다. ssm-user 계정으로도 가능함..
+    destination: /home/ubuntu/action # TODO destination이 반드시 ubuntu일 필요는 없다. ssm-user 계정으로도 가능함.
     overwrite: yes
 
 # 배포된 파일에 대한 권한 설정
