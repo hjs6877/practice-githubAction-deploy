@@ -1,6 +1,6 @@
 #!/bin/bash
 # TODO: ubuntu 계정을 ssm-user 계정 경로로 바꿔서 해도 된다.
-# TODO: build 디렉토리에서 jar 파일을 cp 하는 작업을 하지 않도록 하기.
+# TODO: 프로젝트 통째로 압축해서 전달하지 않는다면 build 디렉토리에서 jar 파일을 cp 하는 작업을 할 필요가 없다.
 # 빌드 파일의 이름이 콘텐츠와 다르다면 다음 줄의 .jar 파일 이름을 수정하시기 바랍니다.
 BUILD_JAR=$(ls /home/ubuntu/action/build/libs/practice-githubAction-deploy-0.0.1-SNAPSHOT.jar)
 JAR_NAME=$(basename $BUILD_JAR)
@@ -11,6 +11,8 @@ echo "> build 파일명: $JAR_NAME" >> /home/ubuntu/action/deploy.log
 
 echo "> build 파일 복사" >> /home/ubuntu/action/deploy.log
 DEPLOY_PATH=/home/ubuntu/action/
+
+# jar 파일 copy
 cp $BUILD_JAR $DEPLOY_PATH
 
 echo "> 현재 실행중인 애플리케이션 pid 확인" >> /home/ubuntu/action/deploy.log
